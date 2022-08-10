@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Kumbh Sans',sans-serif;
+}
+
+.navbar{
+    background: #131313;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+#navbar__logo{
+    background-color: #00539B;
+    text-shadow: 0px 0px 1px #fff;
+    background-image: linear-gradient(to top,#95e9e4 0%,#43F5E9 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 3.4rem;
+}
+
+.fa-gem{
+    margin-right: 0.5rem;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item{
+    height: 90px;
+}
+
+.navbar__links{
+    color: #00539B;
+    text-shadow: 0px 0px 1px #fff;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__links:hover{ /*chaning the hover color*/
+    color: #f77062;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px){ /*, this class is triggered when you hit 960px*/
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu{ /*making menu hide*/
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #131313;
+    }
+
+    .navbar__menu.active{ /*when we click it, this tiggers the java to show the entire menu*/
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo{ /*Moving the next logo*/
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+
+    }
+
+    .narbar__item{
+        width: 100%;
+    }
+
+    .navbar__links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%,20%);
+    }
+
+    .navbar__toggle .bar{ /*created bar*/
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+ /* Body Section */
+
+
+.body{
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 240vh;
+}
+
+.body h1{
+    text-align: center;
+    background-color:#ff8177;
+    background-image: linear-gradient(to top,#b721ff 0%, #00539B 100%);;
+    background-size: 100%;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.body p{
+    color: #fff;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+@media screen and (max-width: 960px){
+    .body{
+        height: 480vh;
+    }
+
+    .services h1{
+        font-size: 2rem;
+    }
+
+
+
+    
+}
